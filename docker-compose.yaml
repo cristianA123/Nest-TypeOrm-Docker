@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: postgres-hotel
+    image: postgres:15.3
+    restart: always
+    ports:
+      - '5432:5432'
+    env_file:
+      - ./src/utils/envs/development.env
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin-hotel
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - '8080:80'
+    env_file:
+      - ./src/utils/envs/development.env
+    depends_on:
+      - postgres
