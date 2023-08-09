@@ -2,14 +2,20 @@
 ## Description
 
 levantar db:
-```
-  docker-compose up
+```bash
+ $ docker-compose up
 ```
 
 ## Installation
 
 ```bash
 $ npm install
+```
+
+## environment
+
+```bash
+$ .env
 ```
 
 ## Nest
